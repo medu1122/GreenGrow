@@ -1,0 +1,25 @@
+{
+  "name": "plant-disease-analyzer",
+  "version": "1.0.0",
+  "description": "AI-powered plant disease analysis system",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": ["plant", "disease", "ai", "analysis", "react", "nodejs"],
+  "author": "Plant Disease Analyzer Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "jest": "^29.7.0"
+  }
+}
