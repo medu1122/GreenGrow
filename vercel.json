@@ -4,12 +4,9 @@
     { "src": "client/package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } }
   ],
   "framework": "create-react-app",
-  "routes": [
-    { "src": "/api/(.*)", "dest": "https://YOUR-BACKEND-HOST/api/$1" },
-    { "src": "/socket.io/(.*)", "dest": "https://YOUR-BACKEND-HOST/socket.io/$1" }
-  ],
   "rewrites": [
     { "source": "/api/:path*", "destination": "https://YOUR-BACKEND-HOST/api/:path*" },
-    { "source": "/socket.io/:path*", "destination": "https://YOUR-BACKEND-HOST/socket.io/:path*" }
+    { "source": "/socket.io/:path*", "destination": "https://YOUR-BACKEND-HOST/socket.io/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
