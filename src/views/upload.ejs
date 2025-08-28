@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chẩn đoán cây - Tải ảnh</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Chẩn đoán cây bằng AI</h1>
+    <% if (typeof error !== 'undefined' && error) { %>
+      <article class="contrast">
+        <p><strong><%= error %></strong></p>
+      </article>
+    <% } %>
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+      <label for="image">Chọn ảnh cây (JPG/PNG/WEBP, ≤ 8MB)</label>
+      <input type="file" id="image" name="image" accept="image/*" required />
+      <button type="submit">Phân tích</button>
+    </form>
+  </main>
+</body>
+</html>
+
+

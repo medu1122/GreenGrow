@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kết quả chẩn đoán</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Kết quả chẩn đoán</h1>
+    <article>
+      <img src="<%= imageUrl %>" alt="Ảnh cây" style="max-width: 320px; border-radius: 8px;" />
+      <p><strong>Loài:</strong> <%= analysis.species %></p>
+      <p><strong>Bệnh:</strong> <%= analysis.disease %></p>
+      <p><strong>Độ tin cậy:</strong> <%= Math.round(analysis.confidence * 100) %>%</p>
+      <h3>Khuyến nghị</h3>
+      <ul>
+        <% analysis.recommendations.forEach(function (rec) { %>
+          <li><%= rec %></li>
+        <% }) %>
+      </ul>
+    </article>
+    <p>
+      <a href="/">Phân tích ảnh khác</a>
+    </p>
+  </main>
+</body>
+</html>
+
+
